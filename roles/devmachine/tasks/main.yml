@@ -1,0 +1,14 @@
+
+# Run the equivalent of "apt-get update" as a separate step
+- apt: update_cache=yes
+
+- apt: name=build-essential state=present
+- apt: name=curl state=present
+- apt: name=git-core state=present
+- apt: name=vim state=present
+- apt: name=weechat state=present
+
+- include: golang.yml
+
+- include: dotfiles.yml
+- include: dotvim.yml
