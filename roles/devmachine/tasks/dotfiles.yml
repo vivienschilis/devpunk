@@ -1,4 +1,4 @@
-- local_action: stat path={{ home_root }}/DotFiles
+- local_action: stat path={{ dotfiles_path }}
   sudo: false
   register: dotfiles_exists
 
@@ -8,18 +8,18 @@
   args:
     accept_hostkey: yes
     repo: git@github.com:vivienschilis/DotFiles.git
-    dest: "{{ home_root }}/DotFiles"
+    dest: "{{ dotfiles_path }}"
     update: yes
     force: yes
 
 - name: Setup DotFiles
-  command: "make -C {{ home_root }}/DotFiles -f Makefile -k setup"
+  command: "make -C {{ dotfiles_path }} -f Makefile -k setup"
   args:
-    chdir: "{{ home_root }}/DotFiles"
+    chdir: "{{ dotfiles_path }}"
   when: not dotfiles_exists.stat.exists
 
 - name: Update DotFiles
-  command: "make -C {{ home_root }}/DotFiles -f Makefile -k update"
+  command: "make -C {{ dotfiles_path }} -f Makefile -k update"
   args:
-    chdir: "{{ home_root }}/DotFiles"
+    chdir: "{{ dotfiles_path }}"
   when: dotfiles_exists.stat.exists

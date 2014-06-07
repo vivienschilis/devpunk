@@ -1,3 +1,5 @@
 ---
 git_ref: master
 home_root: /home/vagrant
+dotfiles_path: "/home/vagrant/.DotFiles"
+dotvim_path: "/home/vagrant/.vim"

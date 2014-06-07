@@ -1,4 +1,4 @@
-- local_action: stat path={{ home_root }}/DotVim
+- local_action: stat path={{ dotvim_path }}
   sudo: false
   register: dotfiles_exists
 
@@ -8,20 +8,20 @@
   args:
     accept_hostkey: yes
     repo: git@github.com:vivienschilis/DotVim.git
-    dest: "{{ home_root }}/DotVim"
+    dest: "{{ dotvim_path }}"
     update: yes
     force: yes
 
 - name: Setup DotVim
-  command: "make -C {{ home_root }}/DotVim -f Makefile -k run"
+  command: "make -C {{ dotvim_path }} -f Makefile -k run"
   sudo: false
   args:
-    chdir: "{{ home_root }}/DotVim"
+    chdir: "{{ dotvim_path }}"
   when: not dotfiles_exists.stat.exists
 
 - name: Update DotVim
-  command: "make -C {{ home_root }}/DotVim -f Makefile -k run"
+  command: "make -C {{ dotvim_path }} -f Makefile -k run"
   sudo: false
   args:
-    chdir: "{{ home_root }}/DotVim"
+    chdir: "{{ dotvim_path }}"
   when: dotfiles_exists.stat.exists

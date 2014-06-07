@@ -7,6 +7,10 @@
 - apt: name=vim state=present
 - apt: name=weechat state=present
 
+- apt: name=zsh state=present
+- apt: name=ack state=present
+- apt: name=tmux state=present
+
 - include: silver_searcher.yml
 - include: golang.yml
 
