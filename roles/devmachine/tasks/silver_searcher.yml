@@ -4,7 +4,6 @@
 - apt: name=zlib1g-dev state=present
 - apt: name=liblzma-dev state=present
 
-
 - name: Download Silver searcher
   action: git
   sudo: false

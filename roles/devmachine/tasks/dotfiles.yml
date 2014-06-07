@@ -2,9 +2,6 @@
   sudo: false
   register: dotfiles_exists
 
-- name: Debug result
-  debug: var=dotfiles_exists
-
 - name: Get DotFiles
   action: git
   sudo: false
