@@ -1,0 +1,26 @@
+- apt: name=automake state=present
+- apt: name=pkg-config state=present
+- apt: name=libpcre3-dev state=present
+- apt: name=zlib1g-dev state=present
+- apt: name=liblzma-dev state=present
+
+
+- name: Download Silver searcher
+  action: git
+  sudo: false
+  args:
+    accept_hostkey: yes
+    repo: https://github.com/ggreer/the_silver_searcher.git
+    dest: /tmp/the_silver_searcher
+    update: yes
+    force: yes
+
+- name: Build Silver searcher
+  command: ./build.sh
+  args:
+    chdir: /tmp/the_silver_searcher
+
+- name: Build Silver searcher
+  command: make install
+  args:
+    chdir: /tmp/the_silver_searcher
