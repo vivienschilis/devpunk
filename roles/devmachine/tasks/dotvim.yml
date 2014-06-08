@@ -1,6 +1,6 @@
-- local_action: stat path={{ dotvim_path }}
+- local_action: "stat path={{ dotvim_path }}/vimrc"
   sudo: false
-  register: dotfiles_exists
+  register: dotvim_exists
 
 - name: Get DotVim
   action: git
@@ -17,11 +17,11 @@
   sudo: false
   args:
     chdir: "{{ dotvim_path }}"
-  when: not dotfiles_exists.stat.exists
+  when: not dotvim_exists.stat.exists
 
 - name: Update DotVim
-  command: "make -C {{ dotvim_path }} -f Makefile -k run"
+  command: "make -C {{ dotvim_path }} -f Makefile -k update"
   sudo: false
   args:
     chdir: "{{ dotvim_path }}"
-  when: dotfiles_exists.stat.exists
+  when: dotvim_exists.stat.exists

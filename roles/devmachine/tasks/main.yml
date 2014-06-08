@@ -6,6 +6,7 @@
 - apt: name=git-core state=present
 - apt: name=vim state=present
 - apt: name=weechat state=present
+- apt: name=autojump state=present
 
 - apt: name=zsh state=present
 - apt: name=ack state=present
@@ -13,6 +14,8 @@
 
 - include: silver_searcher.yml
 - include: golang.yml
-
 - include: dotfiles.yml
 - include: dotvim.yml
+
+- name: Set zsh as default shell
+  user: name={{ user }} shell=/bin/zsh
