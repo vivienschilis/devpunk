@@ -1,0 +1,25 @@
+*.DS_Store
+*.pyc
+.envrc
+/*.key
+*.gem
+*.rbc
+/.config
+/coverage/
+/InstalledFiles
+/pkg/
+/spec/reports/
+/test/tmp/
+/test/version_tmp/
+/tmp/
+
+## Specific to RubyMotion:
+.dat*
+.repl_history
+build/
+
+## Environment normalisation:
+/.bundle/
+.envrc
+.vagrant
+
