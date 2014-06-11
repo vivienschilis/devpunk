@@ -1,4 +1,4 @@
-- local_action: stat path={{ dotfiles_path }}
+- action: stat path={{ dotfiles_path }}
   sudo: false
   register: dotfiles_exists
 
