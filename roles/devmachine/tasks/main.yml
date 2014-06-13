@@ -16,6 +16,7 @@
 - include: golang.yml
 - include: dotfiles.yml
 - include: dotvim.yml
+- include: git-surf.yml
 
 - name: Set zsh as default shell
   user: name={{ user }} shell=/bin/zsh

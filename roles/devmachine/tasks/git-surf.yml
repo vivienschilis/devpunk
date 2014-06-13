@@ -1,0 +1,14 @@
+- name: Download git-surf
+  action: git
+  sudo: false
+  args:
+    accept_hostkey: yes
+    repo: https://github.com/lukaszkorecki/git-surf
+    dest: /tmp/git-surf
+    update: yes
+    force: yes
+
+- name: Build git-surf
+  command: make install
+  args:
+    chdir: /tmp/git-surf
