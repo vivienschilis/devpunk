@@ -1,8 +1,8 @@
-- apt: name=automake state=present
-- apt: name=pkg-config state=present
-- apt: name=libpcre3-dev state=present
-- apt: name=zlib1g-dev state=present
-- apt: name=liblzma-dev state=present
+- yum: name=automake state=present
+- yum: name=pkgconfig state=present
+- yum: name=pcre-devel state=present
+- yum: name=zlib-devel state=present
+- yum: name=xz-devel state=present
 
 - name: Download Silver searcher
   action: git

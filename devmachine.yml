@@ -2,5 +2,6 @@
 # file: webservers.yml
 - hosts: all
   roles:
-    - ruby
     - devmachine
+    - ruby
+

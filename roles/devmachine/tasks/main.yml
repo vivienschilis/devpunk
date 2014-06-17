@@ -1,19 +1,19 @@
-# Run the equivalent of "apt-get update" as a separate step
-- apt: update_cache=yes
+- name: Update packages
+  command: yum -y update
 
-- apt: name=build-essential state=present
-- apt: name=curl state=present
-- apt: name=git-core state=present
-- apt: name=vim state=present
-- apt: name=weechat state=present
-- apt: name=autojump state=present
+- yum: name="@Development tools" state=present
+- yum: name=curl state=present
+- yum: name=git-core state=present
+- yum: name=vim state=present
+- yum: name=weechat state=present
+- yum: name=autojump state=present
 
-- apt: name=zsh state=present
-- apt: name=ack state=present
-- apt: name=tmux state=present
+- yum: name=zsh state=present
+- yum: name=ack state=present
+- yum: name=tmux state=present
+- yum: name=golang state=present
 
 - include: silver_searcher.yml
-- include: golang.yml
 - include: dotfiles.yml
 - include: dotvim.yml
 - include: git-surf.yml
