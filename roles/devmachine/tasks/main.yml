@@ -14,8 +14,8 @@
 - yum: name=golang state=present
 
 - include: silver_searcher.yml
-- include: dotfiles.yml
 - include: dotvim.yml
+- include: dotfiles.yml
 - include: git-surf.yml
 
 - name: Set zsh as default shell
