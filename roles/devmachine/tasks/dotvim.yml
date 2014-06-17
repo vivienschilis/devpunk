@@ -12,6 +12,16 @@
     update: yes
     force: yes
 
+- name: Vundle
+  action: git
+  sudo: false
+  args:
+    accept_hostkey: yes
+    repo: https://github.com/gmarik/Vundle.vim.git
+    dest: "{{ dotvim_path }}/bundle/vundle"
+    update: yes
+    force: yes
+
 - name: Setup DotVim
   command: "make -C {{ dotvim_path }} -f Makefile -k run"
   sudo: false
