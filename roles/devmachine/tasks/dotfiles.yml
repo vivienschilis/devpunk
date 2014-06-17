@@ -7,7 +7,7 @@
   sudo: false
   args:
     accept_hostkey: yes
-    repo: git@github.com:vivienschilis/DotFiles.git
+    repo: https://github.com/vivienschilis/DotFiles.git
     dest: "{{ dotfiles_path }}"
     update: yes
     force: yes

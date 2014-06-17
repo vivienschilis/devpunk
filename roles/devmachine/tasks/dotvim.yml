@@ -7,7 +7,7 @@
   sudo: false
   args:
     accept_hostkey: yes
-    repo: git@github.com:vivienschilis/DotVim.git
+    repo: https://github.com/vivienschilis/DotVim.git
     dest: "{{ dotvim_path }}"
     update: yes
     force: yes
