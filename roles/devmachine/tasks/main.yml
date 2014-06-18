@@ -8,24 +8,12 @@
     create=yes
     mode=0644
 
-- name: Update packages
-  command: yum -y update
+- name: Apt dependencies
+  include: yum_pkg.yml
   when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux' or ansible_distribution == 'Amazon'
 
-- name: Install YUM Dev dependencies
-  yum: name="{{ item }}"
-  with_items:
-    dev_yum_dependencies
-  when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux' or ansible_distribution == 'Amazon'
-
-- name: Update APT cache
-  apt: update_cache=yes
-  when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
-
-- name: Install APT Dev dependencies
-  apt: pkg={{ item }}
-  with_items:
-    dev_apt_dependencies
+- name: YUM dependencies
+  include: apt_pkg.yml
   when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
 
 - include: silver_searcher.yml

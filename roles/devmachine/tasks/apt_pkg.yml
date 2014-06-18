@@ -1,0 +1,7 @@
+- name: Update APT cache
+  apt: update_cache=yes
+
+- name: Install APT Dev dependencies
+  apt: pkg={{ item }}
+  with_items:
+    dev_apt_dependencies

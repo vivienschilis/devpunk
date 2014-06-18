@@ -1,0 +1,7 @@
+- name: Update packages
+  command: yum -y update
+
+- name: Install YUM Dev dependencies
+  yum: name="{{ item }}"
+  with_items:
+    dev_yum_dependencies
