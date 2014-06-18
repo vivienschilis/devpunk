@@ -1,6 +1,0 @@
----
-- name: Add golang repository
-  apt_repository: repo='ppa:gophers/go'
-
-- name: Install GoLang
-  apt: pkg=golang
