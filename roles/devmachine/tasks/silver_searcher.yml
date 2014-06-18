@@ -1,9 +1,3 @@
-- yum: name=automake state=present
-- yum: name=pkgconfig state=present
-- yum: name=pcre-devel state=present
-- yum: name=zlib-devel state=present
-- yum: name=xz-devel state=present
-
 - name: Download Silver searcher
   action: git
   sudo: false
