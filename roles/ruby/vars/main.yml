@@ -1,4 +1,4 @@
 ---
 workspace: /home/vagrant
-ruby_download_url: ftp://ftp.ruby-lang.org/pub/ruby/2.1/ruby-2.1.1.tar.gz
-ruby_version: 2.1.1
+ruby_download_url: ftp://ftp.ruby-lang.org/pub/ruby/2.1/ruby-2.1.2.tar.gz
+ruby_version: 2.1.2
