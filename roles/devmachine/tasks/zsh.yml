@@ -1,3 +1,4 @@
+---
 - name: Clone oh-my-zsh repo
   git: repo=https://github.com/robbyrussell/oh-my-zsh.git dest=/home/{{ansible_ssh_user}}/.oh-my-zsh force=yes
 

@@ -1,3 +1,4 @@
+---
 - name: Update APT cache
   apt: update_cache=yes
 
@@ -5,3 +6,9 @@
   apt: pkg={{ item }}
   with_items:
     dev_apt_dependencies
+
+- name: Add golang repository
+  apt_repository: repo='ppa:gophers/go'
+
+- name: Install GoLang
+  apt: pkg=golang

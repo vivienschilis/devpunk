@@ -1,3 +1,4 @@
+---
 - action: stat path={{ dotfiles_path }}
   sudo: false
   register: dotfiles_exists

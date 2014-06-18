@@ -1,3 +1,4 @@
+---
 - name: Download Silver searcher
   action: git
   sudo: false

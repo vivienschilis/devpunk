@@ -1,3 +1,4 @@
+---
 - name: make sure root can use SSH agent forwarding of default user
   lineinfile: dest=/etc/sudoers
               state=present

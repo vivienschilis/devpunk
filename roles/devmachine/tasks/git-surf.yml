@@ -1,3 +1,4 @@
+---
 - name: Download git-surf
   action: git
   sudo: false

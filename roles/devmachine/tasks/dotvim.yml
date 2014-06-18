@@ -1,3 +1,4 @@
+---
 - action: "stat path={{ dotvim_path }}/vimrc"
   sudo: false
   register: dotvim_exists
