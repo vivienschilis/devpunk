@@ -1,6 +1,13 @@
 ---
 - include: ssh_forwarding.yml
 
+- name: Add github.com to known_hosts file
+  lineinfile: dest=/home/{{ansible_ssh_user}}/.ssh/known_hosts
+    line="{{ lookup('pipe', 'ssh-keyscan github.com') }}"
+    state=present
+    create=yes
+    mode=0644
+
 - name: Update packages
   command: yum -y update
   when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux' or ansible_distribution == 'Amazon'

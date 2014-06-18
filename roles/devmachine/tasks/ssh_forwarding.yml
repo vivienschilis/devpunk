@@ -3,4 +3,3 @@
               state=present
               regexp='^Defaults env_keep.*"SSH_AUTH_SOCK"$'
               line='Defaults env_keep += "SSH_AUTH_SOCK"'
-  sudo: yes
