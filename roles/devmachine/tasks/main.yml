@@ -1,3 +1,5 @@
+- include: ssh_forwarding.yml
+
 - name: Update packages
   command: yum -y update
 
