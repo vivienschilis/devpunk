@@ -29,7 +29,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provision :ansible do |ansible|
     # ansible.verbose = 'v'
     ansible.playbook = "site.yml"
-    ansible.sudo = true
     ansible.extra_vars = { ansible_ssh_user: 'vagrant', ansible_connection: 'ssh', ansible_ssh_args: '-o ForwardAgent=yes'}
     ansible.raw_ssh_args = ['-o UserKnownHostsFile=/dev/null']
   end
