@@ -11,5 +11,5 @@ Provision your machine
 
 
 ```bash
-$ ansible-playbook -i inventory devmachine.yml
+$ ansible-playbook -i inventory dev.yml
 ```
