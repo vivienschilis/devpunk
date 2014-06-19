@@ -1,8 +1,6 @@
 ---
-# file: webservers.yml
 - hosts: all
   sudo: true
   roles:
     - devmachine
-    - ruby
 

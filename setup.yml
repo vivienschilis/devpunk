@@ -1,0 +1,7 @@
+---
+- include: dev.yml
+
+- hosts: all
+  sudo: true
+  roles:
+    - ruby
