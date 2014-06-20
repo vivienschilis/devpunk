@@ -1,0 +1,15 @@
+---
+- name: Download Direnv
+  action: git
+  sudo: false
+  args:
+    accept_hostkey: yes
+    repo: https://github.com/zimbatm/direnv.git
+    dest: /tmp/direnv
+    update: yes
+    force: yes
+
+- name: Build Direnv searcher
+  command: make install
+  args:
+    chdir: /tmp/direnv

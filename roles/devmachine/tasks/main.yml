@@ -21,3 +21,4 @@
 - include: dotfiles.yml
 - include: git-surf.yml
 - include: zsh.yml
+- include: direnv.yml
