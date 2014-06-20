@@ -14,12 +14,14 @@
     force: yes
 
 - name: Setup DotFiles
+  sudo: false
   command: "make -C {{ dotfiles_path }} -f Makefile -k setup"
   args:
     chdir: "{{ dotfiles_path }}"
   when: not dotfiles_exists.stat.exists
 
 - name: Update DotFiles
+  sudo: false
   command: "make -C {{ dotfiles_path }} -f Makefile -k update"
   args:
     chdir: "{{ dotfiles_path }}"
