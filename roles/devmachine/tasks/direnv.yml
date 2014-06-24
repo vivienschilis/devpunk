@@ -9,7 +9,7 @@
     update: yes
     force: yes
 
-- name: Build Direnv searcher
+- name: Build Direnv
   command: make install
   args:
     chdir: /tmp/direnv
