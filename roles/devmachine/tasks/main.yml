@@ -22,3 +22,4 @@
 - include: git-surf.yml
 - include: zsh.yml
 - include: direnv.yml
+- include: golang.yml

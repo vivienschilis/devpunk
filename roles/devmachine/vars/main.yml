@@ -14,7 +14,6 @@ dev_yum_dependencies:
   - zsh
   - ack
   - tmux
-  - golang
   - automake
   - pkgconfig
   - pcre-devel
@@ -38,3 +37,4 @@ dev_apt_dependencies:
   - zlib1g-dev
   - liblzma-dev
   - tree
+  - subversion
