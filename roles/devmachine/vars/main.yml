@@ -38,3 +38,4 @@ dev_apt_dependencies:
   - liblzma-dev
   - tree
   - subversion
+  - mercurial

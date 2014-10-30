@@ -20,6 +20,20 @@
     chdir: "{{ dotfiles_path }}"
   when: not dotfiles_exists.stat.exists
 
+- name: Setup OhMyZsh
+  sudo: false
+  command: "make -C {{ dotfiles_path }} -f Makefile -k ohmyzsh"
+  args:
+    chdir: "{{ dotfiles_path }}"
+  when: not dotfiles_exists.stat.exists
+
+- name: Setup Vim
+  sudo: false
+  command: "make -C {{ dotfiles_path }} -f Makefile -k vim"
+  args:
+    chdir: "{{ dotfiles_path }}"
+  when: not dotfiles_exists.stat.exists
+
 - name: Update DotFiles
   sudo: false
   command: "make -C {{ dotfiles_path }} -f Makefile -k update"

@@ -16,3 +16,4 @@
     creates=/usr/local/bin/go
   with_items:
     - ./all.bash
+
